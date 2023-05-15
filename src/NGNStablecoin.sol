@@ -14,7 +14,7 @@ contract NGNStablecoin is ERC20 {
     IERC20 public collateralToken;
     AggregatorV3Interface public priceFeed;
 
-    uint public constant COLLATER_DECIMAL = 1e18;
+    uint public constant COLLATERAL_DECIMAL = 1e18;
 
     constructor(
         address _collateralToken,
@@ -39,5 +39,8 @@ contract NGNStablecoin is ERC20 {
 
     function calculateCollateralAmount(
         uint _stablecoinAmount
-    ) public view returns (uint) {}
+    ) public view returns (uint) {
+        uint collateralprice = getCollateralPrice();
+        return _stablecoinAmount.mul(COLLATERAL_DECIMAL).div(collateralprice);
+    }
 }
