@@ -14,8 +14,20 @@ contract NGNStablecoin is ERC20 {
     IERC20 public collateralToken;
     AggregatorV3Interface public priceFeed;
 
+    uint public constant COLLATER_DECIMAL = 1e18;
+
     constructor(
         address _collateralToken,
         address _pricefeed
-    ) ERC20("Nigeria Coin", "NGNC") {}
+    ) ERC20("Nigeria Coin", "NGNC") {
+        require(
+            _collateralToken != address(0),
+            "invalid collateral token address"
+        );
+        require(_pricefeed != address(0), "invalid price feed address");
+
+        admin = msg.sender;
+        collateralToken = IERC20(_collateralToken);
+        priceFeed = AggregatorV3Interface(_pricefeed);
+    }
 }
