@@ -25,5 +25,18 @@ contract MockChainlinkAggregator is AggregatorV3Interface {
         return 1;
     }
 
-function getRoundData(uint80 _roundId)external pure override returns(uint80, uint256, unit256,)
+    function getRoundData(
+        uint80 _roundId
+    ) external view override returns (uint80, int256, uint256, uint80) {
+        return (_roundId, price, 1, 1, _roundId - 1);
+    }
+
+    function latestRoundData()
+        external
+        view
+        override
+        returns (uint80, int256, uint256, uint256, uint80)
+    {
+        return (roundId, price, 1, 1, roundId - 1);
+    }
 }
