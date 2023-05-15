@@ -16,4 +16,8 @@ contract MockChainlinkAggregator is AggregatorV3Interface {
     function decimals() external pure override returns (uint8) {
         return 8;
     }
+
+    function description() external pure override returns (string memory) {
+        return "Mock Chainlink Aggregator";
+    }
 }
