@@ -56,4 +56,12 @@ contract NGNStablecoin is ERC20 {
 
         _mint(msg.sender, _stablecoinAmount);
     }
+
+    function burn(uint _stablecoinAmount) external {
+        require(_stablecoinAmount > 0, "Invalid stablecoin amount");
+
+        uint collateralAmount = calculateCollateralAmount(_stablecoinAmount);
+        _burn(msg.sender, _stablecoinAmount);
+        collateralToken.transfer(msg.sender, collateralAmount);
+    }
 }
