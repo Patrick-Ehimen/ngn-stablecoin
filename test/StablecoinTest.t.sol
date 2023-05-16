@@ -17,5 +17,7 @@ contract StablecoinTest is Test {
     function setUp() public {
         collateralToken = new MockERC20("Mock Token", "MCK", 1e24);
         mockPriceFeed = new MockChainlinkAggregator(1e18);
+
+    stablecoin = new NGNStablecoin(address(collateralToken), address(mockPriceFeed);
     }
 }
