@@ -11,7 +11,7 @@ Getting Started
 
 ### Prerequisites
 
-foundry
+1. foundry
 
 ### Functions
 
