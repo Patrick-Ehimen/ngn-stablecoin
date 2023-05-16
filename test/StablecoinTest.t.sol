@@ -11,4 +11,8 @@ import "openzeppelin-contracts/utils/math/SafeMath.sol";
 contract StablecoinTest is Test {
     using SafeMath for uint256;
     NGNStablecoin stablecoin;
+    MockERC20 collateralToken;
+    MockChainlinkAggregator mockPriceFeed;
+
+    function setUp() public {}
 }
