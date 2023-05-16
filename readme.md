@@ -1,6 +1,19 @@
 # NGN stablecoin
 
-## Functions
+NGN Stablecoin is a simple ERC20 token that is pegged to the Nigerian Naira (NGN) and backed by a collateral token. The value of the stablecoin is maintained by ensuring that the collateral token is always worth more than the total supply of the stablecoin.
+
+## Features
+
+Minting and burning of stablecoins based on the value of the collateral token
+Automatic adjustment of stablecoin value based on the price of the collateral token
+Integration with Chainlink price feed to ensure accurate pricing of the collateral token
+Getting Started
+
+### Prerequisites
+
+foundry
+
+### Functions
 
 This code defines a function called
 calculateCollateralAmount
