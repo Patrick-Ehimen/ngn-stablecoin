@@ -24,10 +24,7 @@ contract StablecoinTest is Test {
         );
     }
 
-    function oneDollarOfCollateralMintsOneDollarWorthOfStableCoin()
-        public
-        returns ()
-    {
+    function oneDollarOfCollateralMintsOneDollarWorthOfStableCoin() public {
         uint collateralAmount = 1e18;
         uint collateralPrice = stablecoin.getCollateralPrice();
         uint expectedStablecoinAmount = collateralAmount.mul(1e18).div(
