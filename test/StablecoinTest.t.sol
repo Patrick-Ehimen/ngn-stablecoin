@@ -23,4 +23,6 @@ contract StablecoinTest is Test {
             address(mockPriceFeed)
         );
     }
+
+    function oneDollarOfCollateralMintsOneDollarWorthOfStableCoin() public {}
 }
