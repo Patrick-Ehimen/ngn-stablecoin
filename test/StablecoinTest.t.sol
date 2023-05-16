@@ -30,5 +30,17 @@ contract StablecoinTest is Test {
         uint expectedStablecoinAmount = collateralAmount.mul(1e18).div(
             collateralPrice
         );
+
+        collateralToken.approve(address(stablecoin), type(uint256).max); // Approve the SimpleStablecoin contract to spend the collateral tokens
+        collateralToken.mint(msg.sender, expectedStablecoinAmount);
+        uint256 initialStablecoinBalance = stablecoin.balanceOf(address(this));
+        stablecoin.mint(expectedStablecoinAmount);
+        uint256 finalStablecoinBalance = stablecoin.balanceOf(address(this));
+
+        assertEq(
+            finalStablecoinBalance.sub(initialStablecoinBalance),
+            expectedStablecoinAmount,
+            "Minted stablecoin amount does not match the expected amount"
+        );
     }
 }
