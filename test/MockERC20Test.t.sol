@@ -3,10 +3,9 @@ pragma solidity ^0.8.0;
 
 import "forge-std/Test.sol";
 import "openzeppelin-contracts/token/ERC20/IERC20.sol";
-
-import "openzeppelin-contracts/token/ERC20/utils/SafeERC20.sol"
-
+import "openzeppelin-contracts/token/ERC20/utils/SafeERC20.sol";
 import "openzeppelin-contracts/utils/math/SafeMath.sol";
+import "../src/MockERC20.sol";
 
 contract MockERC20Test {
     using SafeERC20 for IERC20;
@@ -18,7 +17,7 @@ contract MockERC20Test {
         token = new MockERC20("Mock Token", "MTK", 1000);
     }
 
-    function testInitialBalance() public {
+    function testInitialBalance() public view {
         uint256 balance = token.balanceOf(address(this));
         assert(balance == 0);
     }
