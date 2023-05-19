@@ -16,7 +16,7 @@ Getting Started
 ### Functions
 
 This code defines a function called
-calculateCollateralAmount
+`calculateCollateralAmount`
 that takes in a parameter
 \_stablecoinAmount
 of type
@@ -26,7 +26,7 @@ uint
 .
 
 Inside the function, it first calls another function
-getCollateralPrice()
+`getCollateralPrice`
 to get the current price of a collateral asset. It then multiplies the
 \_stablecoinAmount
 parameter by a constant
