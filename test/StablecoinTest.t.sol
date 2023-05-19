@@ -42,6 +42,6 @@ contract StablecoinTest is Test {
             expectedStablecoinAmount,
             "Minted stablecoin amount does not match the expected amount"
         );
-        ///////////////////
+        /////////////////////////////////////////
     }
 }
