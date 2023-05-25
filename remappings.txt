@@ -1,2 +1,9 @@
 openzeppelin-contracts/=lib/openzeppelin-contracts/contracts/
 chainlink-contracts/=lib/chainlink/contracts/src/
+
+
+chainlink/=lib/chainlink/
+ds-test/=lib/forge-std/lib/ds-test/src/
+erc4626-tests/=lib/chainlink/contracts/foundry-lib/openzeppelin-contracts/lib/erc4626-tests/
+forge-std/=lib/forge-std/src/
+
